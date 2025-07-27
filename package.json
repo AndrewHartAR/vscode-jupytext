@@ -3,7 +3,7 @@
     "displayName": "Jupytext for Notebooks (AndrewHartAR-fixed)",
     "description": "Open, edit and execute plain script files (Python, R, Julia, TypeScript, C#, etc) as Jupyter Notebooks. Fixed version with multi-file support.",
     "publisher": "AndrewHartAR",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "enableProposedApi": false,
     "preview": true,
     "engines": {
