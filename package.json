@@ -48,7 +48,7 @@
         "commands": [
             {
                 "command": "jupytext-fixed.openAsPairedNotebook",
-                "title": "Open as a Jupyter Notebook (Fixed)"
+                "title": "Open as a Jupyter Notebook"
             }
         ],
         "menus": {
