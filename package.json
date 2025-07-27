@@ -1,9 +1,9 @@
 {
-    "name": "vscode-jupytext",
-    "displayName": "Jupytext for Notebooks (congyiwu)",
-    "description": "Open, edit and execute plain script files (Python, R, Julia, TypeScript, C#, etc) as Jupyter Notebooks.  Soft fork of donjayamanne.vscode-jupytext",
-    "publisher": "congyiwu",
-    "version": "0.1.2",
+    "name": "vscode-jupytext-fixed",
+    "displayName": "Jupytext for Notebooks (AndrewHartAR-fixed)",
+    "description": "Open, edit and execute plain script files (Python, R, Julia, TypeScript, C#, etc) as Jupyter Notebooks. Fixed version with multi-file support.",
+    "publisher": "AndrewHartAR",
+    "version": "0.1.5",
     "enableProposedApi": false,
     "preview": true,
     "engines": {
@@ -25,13 +25,13 @@
         },
         "virtualWorkspaces": false
     },
-    "homepage": "https://github.com/congyiwu/vscode-jupytext",
+    "homepage": "https://github.com/AndrewHartAR/vscode-jupytext",
     "repository": {
         "type": "git",
-        "url": "https://github.com/congyiwu/vscode-jupytext"
+        "url": "https://github.com/AndrewHartAR/vscode-jupytext"
     },
     "bugs": {
-        "url": "https://github.com/congyiwu/vscode-jupytext/issues"
+        "url": "https://github.com/AndrewHartAR/vscode-jupytext/issues"
     },
     "keywords": [
         "python",
@@ -47,46 +47,46 @@
     "contributes": {
         "commands": [
             {
-                "command": "jupyter.openAsPairedNotebook",
-                "title": "Open as a Jupyter Notebook"
+                "command": "jupytext-fixed.openAsPairedNotebook",
+                "title": "Open as a Jupyter Notebook (Fixed)"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
-                    "command": "jupyter.openAsPairedNotebook",
+                    "command": "jupytext-fixed.openAsPairedNotebook",
                     "when": "resourceLangId in vscode-jupytext.resourceLangIds"
                 }
             ],
             "editor/context": [
                 {
-                    "command": "jupyter.openAsPairedNotebook",
+                    "command": "jupytext-fixed.openAsPairedNotebook",
                     "when": "resourceLangId in vscode-jupytext.resourceLangIds"
                 }
             ],
             "editor/title": [
                 {
-                    "command": "jupyter.openAsPairedNotebook",
+                    "command": "jupytext-fixed.openAsPairedNotebook",
                     "when": "resourceLangId in vscode-jupytext.resourceLangIds",
                     "group": "navigation"
                 }
             ],
             "editor/title/context": [
                 {
-                    "command": "jupyter.openAsPairedNotebook",
+                    "command": "jupytext-fixed.openAsPairedNotebook",
                     "when": "resourceLangId in vscode-jupytext.resourceLangIds"
                 }
             ]
         }
     },
     "scripts": {
-        "vscode:prepublish": "yarn run package",
+        "vscode:prepublish": "npm run package",
         "compile": "webpack",
         "watch": "webpack --watch",
         "package": "webpack --mode production --devtool hidden-source-map",
         "test-compile": "tsc -p ./",
         "test-watch": "tsc -watch -p ./",
-        "pretest": "yarn run test-compile && yarn run lint",
+        "pretest": "npm run test-compile && npm run lint",
         "lint": "eslint src --ext ts",
         "test": "node ./out/test/runTest.js",
         "download-api": "vscode-dts dev",
