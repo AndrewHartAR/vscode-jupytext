@@ -13,7 +13,7 @@ import { isJupytextScheme, noop } from './constants';
 
 export function initialize() {
     workspace.registerFileSystemProvider(
-        'jupytext',
+        'jupytext-fixed',
         new JupytextFileSystemProvider(),
         { isCaseSensitive: true, isReadonly: false }
     );

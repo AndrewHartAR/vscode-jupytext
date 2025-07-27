@@ -4,7 +4,7 @@ export const noop = () => {
     //
 };
 
-export const jupytextScheme = 'jupytext';
+export const jupytextScheme = 'jupytext-fixed';
 export function isJupytextScheme(uri:Uri){
     return uri.scheme === jupytextScheme;
 }
