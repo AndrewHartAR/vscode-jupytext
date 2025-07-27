@@ -30,7 +30,8 @@ export async function addMapping(
 ) {
     const cache = getGlobalCache();
     let mappings = cache.get<FileMapping[]>('FileMapping', []);
-    mappings = mappings.filter(item => item.sourceScript === map.sourceScript || item.virtualIpynb === map.virtualIpynb);
+    // Remove any existing mapping for the same source script to avoid duplicates
+    mappings = mappings.filter(item => item.sourceScript !== map.sourceScript);
     mappings.push(map);
     await cache.update('FileMapping', mappings);
 }
@@ -68,7 +69,7 @@ export async function convertToNotebook(
     // Create a virtual file (exact same file paths, but a different scheme).
     const virtualIpynb = Uri.file(
         path.join(path.dirname(uri.fsPath), fname + '.ipynb')
-    ).with({ scheme: 'jupytext' });
+    ).with({ scheme: jupytextScheme });
     existingMapping = existingMapping || {sourceScript: uri.fsPath, tempIpynb: targetIpynb.fsPath, virtualIpynb: virtualIpynb.fsPath };
     
     if (await fs.pathExists(targetIpynb.fsPath)) {
