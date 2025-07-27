@@ -20,7 +20,7 @@ export function initialize() {
             'typescript'
         ]);
 
-    commands.registerCommand('jupyter.openAsPairedNotebook', async (uri?: Uri) => {
+    commands.registerCommand('jupytext-fixed.openAsPairedNotebook', async (uri?: Uri) => {
         uri = uri || window.activeTextEditor?.document.uri ;
         if (!uri){
             return;
